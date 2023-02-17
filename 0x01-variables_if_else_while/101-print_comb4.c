@@ -2,7 +2,7 @@
 
 /**
  * main - prints all possible different combinations of three digits using ASCII codes
- * Return - 0 if success
+ * Return: 0 if success
  */
 int main(void)
 {

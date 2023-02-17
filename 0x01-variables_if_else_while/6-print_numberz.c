@@ -2,7 +2,7 @@
 
 /**
  * main - prints 0 to 9 using ASCII codes
- * Return - 0 if success
+ * Return: 0 if success
  */
 int main(void)
 {
