@@ -18,11 +18,10 @@ int main(void)
 	}
 
 	while (j <= f)
-        {
-                putchar(j);
-                j++;
-        }
-
+	{
+		putchar(j);
+		j++;
+	}
 	putchar('\n');
 
 	return (0);
