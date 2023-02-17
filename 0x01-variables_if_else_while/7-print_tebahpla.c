@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - prints lowercase alphabets in reverse using ASCII codes

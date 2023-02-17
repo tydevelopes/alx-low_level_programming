@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - prints all numbers of base 16 in lowercase and using ASCII codes
