@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible different combinations of two digits using ASCII codes
+ * main - prints all possible diff combinations of two digits using ASCII codes
  * Return: 0 if success
  */
 int main(void)
