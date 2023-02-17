@@ -18,11 +18,10 @@ int main(void)
 	}
 
 	while (A <= Z)
-	{	
+	{
 		putchar(A);
 		A++;
 	}
-	
 	putchar('\n');
 
 	return (0);
