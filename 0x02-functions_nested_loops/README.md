@@ -5,3 +5,6 @@
 ### 0-putchar.c
 Print  the word _putchar followed by newline.
 
+### 1-alphabet.c
+creates a function that prints the alphabet, in lowercase, followed by a
+newline
