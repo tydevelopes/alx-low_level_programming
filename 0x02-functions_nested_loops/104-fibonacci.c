@@ -7,23 +7,32 @@
  */
 int main(void)
 {
-	long double prev_n = 0;
-	long double curr_n = 1;
-	long double n = 0;
+	unsigned long int prev_n_1st_half = 0;
+	unsigned long int prev_n_2nd_half = 0;
+	unsigned long int curr_n_1st_half = 1;
+	unsigned long int curr_n_2nd_half = 1;
+	unsigned long int n_1st_half = 0;
+	unsigned long int n_2nd_half = 0;
 	int i = 0;
+	unsigned long int MAX = 1000000000;
+	long int ovf;
 
 	while (i < 98)
 	{
-		n = prev_n + curr_n;
-		prev_n = curr_n;
-		curr_n = n;
-		if (i != 97)
-			printf("%.0Lf, ", curr_n);
-		else
-			printf("%.0Lf", curr_n);
+		ovf = (prev_n_2nd_half + curr_n_2nd_half) / MAX;
+		n_2nd_half = (prev_n_2nd_half + curr_n_2nd_half) - (MAX * ovf);
+		n_1st_half = prev_n_1st_half + curr_n_1st_half + ovf;
+		prev_n_1st_half = curr_n_1st_half;
+		prev_n_2nd_half = curr_n_2nd_half;
+		curr_n_1st_half = n_1st_half;
+		curr_n_2nd_half = n_2nd_half;
 
+		if (i != 97)
+			printf("%lu%lu, ", curr_n_1st_half, curr_n_2nd_half);
+		else
+			printf("%lu%lu", curr_n_1st_half, curr_n_2nd_half);
 		i++;
-	}
+}
 	printf("\n");
 
 	return (0);
