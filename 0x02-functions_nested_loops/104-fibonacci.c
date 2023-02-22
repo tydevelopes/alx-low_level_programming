@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	unsigned long int prev_n_1st_half = 0;
-	unsigned long int prev_n_2nd_half = 0;
-	unsigned long int curr_n_1st_half = 1;
-	unsigned long int curr_n_2nd_half = 1;
+	unsigned long int MAX = 1000000000;
+	unsigned long int prev_n_1st_half = 0 / MAX;
+	unsigned long int prev_n_2nd_half = 0 % MAX;
+	unsigned long int curr_n_1st_half = 1 / MAX;
+	unsigned long int curr_n_2nd_half = 1 % MAX;
 	unsigned long int n_1st_half = 0;
 	unsigned long int n_2nd_half = 0;
 	int i = 0;
-	unsigned long int MAX = 1000000000;
 	long int ovf;
 
 	while (i < 98)
@@ -28,7 +28,12 @@ int main(void)
 		curr_n_2nd_half = n_2nd_half;
 
 		if (i != 97)
-			printf("%lu%lu, ", curr_n_1st_half, curr_n_2nd_half);
+		{
+			if (curr_n_1st_half == 0)
+				printf("%lu, ", curr_n_2nd_half);
+			else
+				printf("%lu%lu, ", curr_n_1st_half, curr_n_2nd_half);
+		}
 		else
 			printf("%lu%lu", curr_n_1st_half, curr_n_2nd_half);
 		i++;
