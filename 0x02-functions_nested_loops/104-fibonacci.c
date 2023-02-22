@@ -7,13 +7,13 @@
  */
 int main(void)
 {
-	unsigned long int MAX = 1000000000;
-	unsigned long int prev_n_1st_half = 0 / MAX;
-	unsigned long int prev_n_2nd_half = 0 % MAX;
-	unsigned long int curr_n_1st_half = 1 / MAX;
-	unsigned long int curr_n_2nd_half = 1 % MAX;
-	unsigned long int n_1st_half = 0;
-	unsigned long int n_2nd_half = 0;
+	unsigned long MAX = 1000000000;
+	unsigned long prev_n_1st_half = 0 / MAX;
+	unsigned long prev_n_2nd_half = 0 % MAX;
+	unsigned long curr_n_1st_half = 1 / MAX;
+	unsigned long curr_n_2nd_half = 1 % MAX;
+	unsigned long n_1st_half = 0;
+	unsigned long n_2nd_half = 0;
 	int i = 0;
 	long int ovf;
 
