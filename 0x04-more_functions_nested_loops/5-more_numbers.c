@@ -19,8 +19,8 @@ void more_numbers(void)
 
 			if (a != 0)
 				_putchar(a + '0');
-			-putchar(b + '0');
+			_putchar(b + '0');
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
