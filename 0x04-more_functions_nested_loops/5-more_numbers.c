@@ -7,10 +7,12 @@ void more_numbers(void)
 {
 	int a;
 	int b;
+	int i;
+	int j;
 
-	for (int j = 0; j < 10; j++)
+	for (j = 0; j < 10; j++)
 	{
-		for (int i = 0; i <= 14; i++)
+		for (i = 0; i <= 14; i++)
 		{
 			a = i / 10;
 			b = i % 10;
