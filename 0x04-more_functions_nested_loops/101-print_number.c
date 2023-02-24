@@ -15,6 +15,7 @@ void print_number(int n)
 	int i;
 	int num = n;
 	int minus = 45;
+	int zero = 48;
 
 	digits = num_of_digits(n);
 
@@ -29,9 +30,9 @@ void print_number(int n)
 		divisor = _pow(10, i - 1);
 		digit = num / divisor;
 		if (digit != 0)
-			_putchar(digit + '0');
+			_putchar(digit + zero);
 		else
-			_putchar('0');
+			_putchar(zero);
 		num %= divisor;
 	}
 }
