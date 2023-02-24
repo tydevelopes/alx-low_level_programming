@@ -14,12 +14,13 @@ void print_number(int n)
 	int divisor;
 	int i;
 	int num = n;
+	int minus = 45;
 
 	digits = num_of_digits(n);
 
 	if (num < 0)
 	{
-		_putchar('-');
+		_putchar(minus);
 		num *= -1;
 	}
 
