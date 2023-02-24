@@ -1,7 +1,7 @@
 #include "main.h"
-#include <math.h>
 
 int num_of_digits(int n);
+int  _pow(int base, int exp);
 
 /**
  * print_number - prints an integer
@@ -23,14 +23,14 @@ void print_number(int n)
 		num *= -1;
 	}
 
-	for (i = digits; i > 0; i++)
+	for (i = digits; i > 0; i--)
 	{
-		divisor = pow(10, i - 1);
+		divisor = _pow(10, i - 1);
 		digit = num / divisor;
 		if (digit != 0)
 			_putchar(digit + '0');
 		else
-			_putchar(num + '0');
+			_putchar('0');
 		num %= divisor;
 	}
 	_putchar('\n');
@@ -55,4 +55,21 @@ int num_of_digits(int num)
 		digits++;
 	}
 	return (digits);
+}
+
+/**
+ * _pow - calculate power of base, exponent
+ * @base: base of power
+ * @exp: exponent of power
+ * Return: power of base and exp
+ */
+int _pow(int base, int exp)
+{
+	int res = 1;
+	int i;
+
+	for (i = 0; i < exp; i++)
+		res *= base;
+
+	return (res);
 }
