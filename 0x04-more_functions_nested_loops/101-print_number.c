@@ -29,10 +29,7 @@ void print_number(int n)
 	{
 		divisor = _pow(10, i - 1);
 		digit = num / divisor;
-		if (digit != 0)
-			_putchar(digit + zero);
-		else
-			_putchar(zero);
+		_putchar(digit + zero);
 		num %= divisor;
 	}
 }
