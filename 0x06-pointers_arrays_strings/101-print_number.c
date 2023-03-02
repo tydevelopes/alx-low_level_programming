@@ -41,7 +41,7 @@ void print_number(int n)
  */
 int num_of_digits(unsigned int num)
 {
-	unsigned int n = num;
+	int n = num;
 	int digits = 1;
 
 	if (n < 0)
