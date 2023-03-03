@@ -45,7 +45,7 @@ void print_number(int n)
  */
 int num_of_digits(unsigned int num)
 {
-	int n = num;
+	unsigned int n = num;
 	int digits = 1;
 
 	while (n >= 10)
