@@ -17,13 +17,13 @@ void print_number(int n)
 	int minus = 45;
 	int zero = 48;
 
-	digits = num_of_digits(n);
-
 	if (n < 0)
 	{
 		_putchar(minus);
 		num *= -1;
 	}
+
+	digits = num_of_digits(num);
 
 	for (i = digits; i > 0; i--)
 	{
@@ -43,9 +43,6 @@ int num_of_digits(unsigned int num)
 {
 	int n = num;
 	int digits = 1;
-
-	if (n < 0)
-		n *= -1;
 
 	while (n >= 10)
 	{
