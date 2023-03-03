@@ -22,6 +22,10 @@ void print_number(int n)
 		_putchar(minus);
 		num = n * -1;
 	}
+	else
+	{
+		num = n;
+	}
 
 	digits = num_of_digits(num);
 
