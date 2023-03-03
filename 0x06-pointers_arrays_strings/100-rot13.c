@@ -15,8 +15,11 @@ char *rot13(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (isalpha(str[i]))
+		while (isalpha(str[i]))
+		{
 			str[i] = rotate_by_13(str[i]);
+			i++;
+		}
 	}
 
 	return (str);
