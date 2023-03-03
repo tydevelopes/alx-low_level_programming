@@ -34,6 +34,5 @@ char rotate_by_13(char ch)
 {
 	if (islower(ch))
 		return (((ch - 'a' + 13) % 26) + 'a');
-	else
-		return (((ch - 'A' + 13) % 26) + 'A');
+	return (((ch - 'A' + 13) % 26) + 'A');
 }
