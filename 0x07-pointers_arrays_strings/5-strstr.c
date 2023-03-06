@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+#include <string.h>
 
 /**
  * _strstr - seaarches for a subtring
@@ -12,6 +12,9 @@ char *_strstr(char *haystack, char *needle)
 	int i;
 	int j;
 	char *ptr = NULL;
+
+	if (!strlen(needle))
+		return (haystack);
 
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
