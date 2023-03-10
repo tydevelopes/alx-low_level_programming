@@ -1,6 +1,6 @@
 # 0x09. C - Static libraries
 
-## Tasks
+## Tasks and description
 
 ### libmy.a, main.h
 Create the static library libmy.a
