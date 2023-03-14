@@ -30,7 +30,7 @@ char **strtow(char *str)
 		words_count++;
 		word = strtok(NULL, " ");
 	}
-	arr = malloc(sizeof(char *) * words_count + 1);
+	arr = malloc(sizeof(char *) * (words_count + 1));
 
 	if (arr == NULL)
 		return (NULL);
