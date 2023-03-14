@@ -1,6 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
+int is_only_spaces(char *s);
 
 /**
  * strtow - splits a string into words
@@ -17,7 +20,7 @@ char **strtow(char *str)
 	unsigned int str_len = strlen(str);
 	char *ptr = malloc(sizeof(char) * str_len + 1);
 
-	if (str == NULL || str_len == 0 || ptr == NULL)
+	if (is_only_spaces(str) || str == NULL || str_len == 0 || ptr == NULL)
 		return (NULL);
 	strcpy(ptr, str);
 	word = strtok(ptr, " ");
@@ -47,4 +50,19 @@ char **strtow(char *str)
 	arr[i] = NULL;
 	free(ptr);
 	return (arr);
+}
+
+/**
+ * is_only_spaces - checks if string has only spaces
+ * @s: pointer to string to check
+ * Return: 1 if string has all spaces, 0 otherwise
+ */
+int is_only_spaces(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		if (!isspace(s[i]))
+			return (0);
+	return (1);
 }
