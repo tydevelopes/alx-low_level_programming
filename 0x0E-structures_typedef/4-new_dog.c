@@ -11,8 +11,8 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	unsigned int name_len = strlen(name);
-	unsigned int owner_len = strlen(owner);
+	unsigned int name_len;
+	unsigned int owner_len;
 	char *nptr;
 	char *optr;
 
@@ -20,6 +20,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (!d || !name || age < 0 || !owner)
 		return (NULL);
+
+	name_len = strlen(name);
+	owner_len = strlen(owner);
 
 	nptr = malloc(sizeof(char) * (name_len + 1));
 	optr = malloc(sizeof(char) * (owner_len + 1));
