@@ -25,9 +25,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	owner_len = strlen(owner);
 
 	nptr = malloc(sizeof(char) * (name_len + 1));
+	if (!nptr)
+		return (NULL);
 	optr = malloc(sizeof(char) * (owner_len + 1));
 
-	if (!nptr || !optr)
+	if (!optr)
 		return (NULL);
 
 	strcpy(nptr, name);
