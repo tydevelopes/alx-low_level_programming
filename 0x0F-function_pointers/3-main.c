@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	s2 = argv[2];
 	s3 = argv[3];
 
-	if (argc != 4 || !s1 || !s2 || !s3 || !get_op_func(s2))
+	if (argc != 4 || !s1 || !s2 || !s3)
 	{
 		printf("Error\n");
 		exit(98);
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 	op = argv[2];
 
-	if (strchr(ops, op[0]) == NULL)
+	if (strchr(ops, op[0]) == NULL || !get_op_func(s2))
 	{
 		printf("Error\n");
 		exit(99);
