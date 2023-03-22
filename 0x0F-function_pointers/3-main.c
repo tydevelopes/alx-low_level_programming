@@ -11,36 +11,35 @@
  */
 int main(int argc, char *argv[])
 {
+	char *op;
 	char *ops = "+-*/%";
 	int num1;
 	int num2;
 	int (*op_func)(int, int);
-	char *s1, *s2, *s3;
 
-	s1 = argv[1];
-	s2 = argv[2];
-	s3 = argv[3];
-
-	if (argc != 4 || !s1 || !s2 || !s3)
+	if (argc != 4 || argv[1] == NULL || argv[2] == NULL || argv[3] == NULL)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (!strchr(ops, s2[0]) || !get_op_func(s2))
+
+	op = argv[2];
+
+	if (strchr(ops, op[0]) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if ((!strcmp(s2, "/") || !strcmp(s2, "%")) && !strcmp(s3, "0"))
+	if ((!strcmp(op, "/") || !strcmp(op, "%")) && !strcmp(argv[3], "0"))
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	num1 = atoi(s1);
-	num2 = atoi(s2);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
-	op_func = get_op_func(s2);
+	op_func = get_op_func(op);
 
 	printf("%d\n", op_func(num1, num2));
 
