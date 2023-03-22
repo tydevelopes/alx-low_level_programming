@@ -16,8 +16,13 @@ int main(int argc, char *argv[])
 	int num1;
 	int num2;
 	int (*op_func)(int, int);
+	char *s1, *s2, *s3;
 
-	if (argc != 4 || argv[2] == NULL ||  get_op_func(argv[2]) == NULL)
+	s1 = argv[1];
+	s2 = argv[2];
+	s3 = argv[3];
+
+	if (argc != 4 || !s1 || !s2 || !s3 ||  !get_op_func(s2))
 	{
 		printf("Error\n");
 		exit(98);
