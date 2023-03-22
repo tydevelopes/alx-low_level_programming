@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	int num2;
 	int (*op_func)(int, int);
 
-	if (argc != 4 || argv[1] == NULL || argv[2] == NULL || argv[3] == NULL)
+	if (argc != 4 || argv[2] == NULL ||  get_op_func(argv[2]) == NULL)
 	{
 		printf("Error\n");
 		exit(98);
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 	op = argv[2];
 
-	if (strchr(ops, op[0]) == NULL || get_op_func(op) == NULL)
+	if (strchr(ops, op[0]) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
