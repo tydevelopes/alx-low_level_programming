@@ -22,6 +22,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
+	if (argv[1] == NULL || argv[2] == NULL || argv[3] == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
 	op = argv[2];
 
 	if (strchr(ops, op[0]) == NULL)
