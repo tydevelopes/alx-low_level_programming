@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 			break;
 		}
 		if (i != count)
-			printf(", ");
+			printf(" ");
 		i++;
 	}
 	printf("\n");
