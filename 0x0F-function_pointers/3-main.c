@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 	op = argv[2];
 
-	if (strchr(ops, op[0]) == NULL)
+	if (strlen(op) != 1 || strchr(ops, op[0]) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
