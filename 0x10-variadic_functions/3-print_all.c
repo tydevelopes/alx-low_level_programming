@@ -22,6 +22,17 @@ int get_arg_count(const char * const f)
 }
 
 /**
+ * update - update flag and increment args
+ * @n: pointer variable
+ * @f: pointer to variable
+ */
+void update(int *n, int *f)
+{
+	*n += 1;
+	*f = 1;
+}
+
+/**
  * print_all - prins anything
  * @format: pointer to separator
  * @...: arguments
@@ -30,6 +41,7 @@ void print_all(const char * const format, ...)
 {
 	int i = 0, count = 0, num_arg = 0, flag = 0;
 	va_list p;
+	char *s;
 
 	va_start(p, format);
 	count = get_arg_count(format);
@@ -40,23 +52,22 @@ void print_all(const char * const format, ...)
 		{
 		case 'c':
 			printf("%c", va_arg(p, int));
-			num_arg++;
-			flag = 1;
+			update(&num_arg, &flag);
 			break;
 		case 'i':
 			printf("%d", va_arg(p, int));
-			num_arg++;
-			flag = 1;
+			update(&num_arg, &flag);
 			break;
 		case 'f':
 			printf("%f", va_arg(p, double));
-			num_arg++;
-			flag = 1;
+			update(&num_arg, &flag);
 			break;
 		case 's':
-			printf("%s", va_arg(p, char *));
-			num_arg++;
-			flag = 1;
+			s = va_arg(p, char *);
+			if (!s)
+				s = "(nil)";
+			printf("%s", s);
+			update(&num_arg, &flag);
 			break;
 		default:
 			flag = 0;
