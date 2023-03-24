@@ -52,7 +52,7 @@ void print_all(const char * const format, ...)
 	va_start(p, format);
 	count = get_arg_count(format);
 	i = 0;
-	while (*(format + i) != '\0' && num_arg < count)
+	while (format && *(format + i) != '\0' && num_arg < count)
 	{
 		switch (*(format + i))
 		{
