@@ -14,8 +14,14 @@ int get_arg_count(const char * const f)
 
 	while (*(f + i) != '\0')
 	{
-		if (strchr("cifs", *(f + i)) != NULL)
+		switch (strchr("cifs", *(f + i)) != NULL)
+		{
+		case 1:
 			count++;
+			break;
+		default:
+			break;
+		}
 		i++;
 	}
 	return (count);
