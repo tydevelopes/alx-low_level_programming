@@ -21,7 +21,10 @@ list_t *add_node(list_t **head, const char *str)
 	temp->str = strdup(str);
 
 	if (!temp->str)
+	{
+		free(temp);
 		return (NULL);
+	}
 
 	temp->len = (unsigned int)strlen(str);
 	temp->next = NULL;
