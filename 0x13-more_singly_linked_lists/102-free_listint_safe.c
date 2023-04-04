@@ -30,5 +30,5 @@ size_t free_listint_safe(listint_t **h)
 	}
 	free(current_node);
 	/** *h = NULL;*/
-	return (length);
+	return (++length);
 }
