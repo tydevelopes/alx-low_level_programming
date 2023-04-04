@@ -9,7 +9,7 @@ size_t free_listint_safe(listint_t **h)
 {
 	size_t length = 0;
 	listint_t *current_node = NULL;
-	const listint_t *array[1024] = {NULL};
+	listint_t *array[1024] = {NULL};
 
 	if (!h || !*h)
 		return (0);
@@ -18,7 +18,7 @@ size_t free_listint_safe(listint_t **h)
 
 	while ((*h)->next)
 	{
-		if (contains_address(array, *h))
+		if (contains_address((const listint_t **)array, *h))
 			break;
 
 		array[length] = *h;
@@ -29,6 +29,6 @@ size_t free_listint_safe(listint_t **h)
 		current_node = *h;
 	}
 	free(current_node);
-	*h = NULL;
+	/** *h = NULL;*/
 	return (length);
 }
