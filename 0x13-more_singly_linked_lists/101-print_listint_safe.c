@@ -19,18 +19,21 @@ size_t print_listint_safe(const listint_t *head)
 	while (current_node)
 	{
 		if (contains_address(array, current_node))
+		{
+			printf("-> [%p] %d\n", (void *)current_node, current_node->n);
 			break;
+		}
 		array[length] = current_node;
 
 		length++;
-		printf("[%p] %d\n", (void *)current_node ,current_node->n);
+		printf("[%p] %d\n", (void *)current_node, current_node->n);
 		current_node = current_node->next;
 	}
 	return (length);
 }
 
 /**
- * contains-address - checks if array contains given node
+ * contains_address - checks if array contains given node
  * @array: array of pointers to listint_t
  * @node: node to search
  * Return: 1 if found, 0 otherwise
