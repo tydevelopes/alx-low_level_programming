@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_binary - prints the binary representation of a number
@@ -10,7 +11,7 @@ void print_binary(unsigned long int n)
 	int num_shifts;
 	unsigned long int bit;
 
-	if (n < 0)
+	if (n > ULONG_MAX)
 		return;
 
 	if (n == 0)
