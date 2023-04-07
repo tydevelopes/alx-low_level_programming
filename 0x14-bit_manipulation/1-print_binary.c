@@ -7,27 +7,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	int first_bit_1_printed = 0;
-	int num_shifts;
-	unsigned long int bit;
-
-	if (n > ULONG_MAX)
-		return;
-
-	if (n == 0)
+	if (n > 1)
 	{
-		_putchar('0');
-		return;
+		print_binary(n >> 1);
 	}
-	for (num_shifts = NUM_OF_BITS; num_shifts >= 0; num_shifts--)
-	{
-		bit = (n & (1 << num_shifts)) >> num_shifts;
-
-		/* Do not print leading zeros*/
-		if (bit && !first_bit_1_printed)
-			first_bit_1_printed = 1;
-
-		if (first_bit_1_printed)
-			_putchar(bit + '0');
-	}
+	putchar((n & 1) ? '1' : '0');
 }
