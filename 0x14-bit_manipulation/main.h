@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define NUM_OF_BITS (sizeof(char) * 31)
+#define NUM_OF_BITS (sizeof(char) * 63)
 
 int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
