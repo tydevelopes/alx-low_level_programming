@@ -24,6 +24,6 @@ void print_binary(unsigned long int n)
 			first_bit_1_printed = 1;
 
 		if (first_bit_1_printed)
-			printf("%d", bit);
+			_putchar(bit + '0');
 	}
 }
