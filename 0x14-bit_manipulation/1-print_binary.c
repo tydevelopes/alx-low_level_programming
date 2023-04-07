@@ -6,9 +6,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	char first_bit_1_printed = 0;
+	int first_bit_1_printed = 0;
 	int num_shifts;
-	char bit;
+	int bit;
 
 	if (n == 0)
 	{
