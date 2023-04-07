@@ -8,7 +8,7 @@ void print_binary(unsigned long int n)
 {
 	int first_bit_1_printed = 0;
 	int num_shifts;
-	int bit;
+	unsigned long int bit;
 
 	if (n == 0)
 	{
