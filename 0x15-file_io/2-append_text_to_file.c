@@ -23,7 +23,10 @@ int append_text_to_file(const char *filename, char *text_content)
 				strlen(text_content));
 
 	if (bytes_written == -1)
+	{
+		close(file_descriptor);
 		return (-1);
+	}
 
 	close(file_descriptor);
 
