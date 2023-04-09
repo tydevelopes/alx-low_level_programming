@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	char *dest_file = argv[2];
 	char buffer[1024];
 
-	if (argc != 3)
+	if (argc != 3 || !src_file || !dest_file)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
