@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	char *dest_file = argv[2];
 	char buffer[1024];
 
-	if (argc != 3 || !src_file || !dest_file)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		if (bytes_read == -1)
 			handle_rw_error("Error: Can't read from file", src_file, 98);
 
-		bytes_written = write(dest_fd, buffer, 1024);
+		bytes_written = write(dest_fd, buffer, bytes_read);
 		if (bytes_written == -1)
 			handle_rw_error("Error: Can't write to", dest_file, 99);
 
