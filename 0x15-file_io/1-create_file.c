@@ -22,6 +22,8 @@ int create_file(const char *filename, char *text_content)
 	if (text_content)
 		bytes_written = write(file_descriptor, text_content,
 				strlen(text_content));
+	else
+		return (1);
 
 	if (bytes_written == -1)
 		return (-1);
