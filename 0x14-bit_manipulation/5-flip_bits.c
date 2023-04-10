@@ -8,5 +8,15 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	return (__builtin_popcount(n ^ m));
+	unsigned int num_of_flips = 0;
+
+	while (n > 0 || m > 0)
+	{
+		if ((n & 1) != (m & 1))
+			num_of_flips++;
+		n = n >> 1;
+		m = m >> 1;
+	}
+
+	return (num_of_flips);
 }
