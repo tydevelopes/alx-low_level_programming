@@ -37,12 +37,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
 		(*head)->prev = temp;
 		*head = temp;
 	}
-	else if (current_index == idx)
+	else if (current_index == idx && current_node)
 	{
 		previous_node->next = temp;
 		temp->prev = previous_node;
 		temp->next = current_node;
 		current_node->prev = temp;
+	}
+	else if (current_index == idx && !current_node)
+	{
+		previous_node->next = temp;
+		temp->prev = previous_node;
+		temp->next = current_node;
 	}
 	else
 	{
