@@ -23,12 +23,20 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	if (!current_node)
 		return (-1);
-	if (!previous_node)
+	if (!previous_node && !current_node->next)
 		*head = current_node->next;
+	else if (!previous_node && current_node->next)
+	{
+		*head = current_node->next;
+		current_node->next->prev = NULL;
+		current_node->next = NULL;
+	}
 	else
 	{
 		previous_node->next = current_node->next;
 		current_node->next->prev = previous_node;
+		current_node->next = NULL;
+		current_node->prev = NULL;
 	}
 	free(current_node);
 	return (1);
