@@ -1,8 +1,6 @@
 #include "main.h"
 #include <string.h>
 
-int ch_in_str(char *, char);
-
 /**
  * _strpbrk - searches a string for any of a set of bytes
  * @s: pointer to string to search
@@ -24,23 +22,4 @@ char *_strpbrk(char *s, char *accept)
 		i++;
 	}
 	return (ptr);
-}
-
-/**
- * ch_in_str - checks if ch is in str
- * @str: pointer to string to check
- * @ch: character to check
- * Return: 1 if found, 0 otherwise
- */
-int ch_in_str(char *str, char ch)
-{
-	char *ptr = str;
-
-	while (*ptr != '\0')
-	{
-		if (*ptr == ch)
-			return (1);
-		ptr++;
-	}
-	return (0);
 }
