@@ -44,7 +44,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	/* key doesn't exist so add node to beginning of list */
 	node->next = head;
-	head = node;
+	ht->array[index] = node;
 
 	return (1);
 }
