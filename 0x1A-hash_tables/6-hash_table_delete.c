@@ -2,10 +2,12 @@
 
 /**
  * hash_table_delete - delete a hash table
+ * @ht: pointer to hash table
 */
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i;
+
 	if (!ht)
 		return;
 	for (i = 0; i < ht->size; i++)
