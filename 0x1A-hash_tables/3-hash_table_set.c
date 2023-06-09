@@ -59,7 +59,7 @@ hash_node_t *create_node(const char *key, const char *value)
 {
 	hash_node_t *node = NULL;
 
-	if (!key || strlen(key) == 0 || !value)
+	if (!key || strlen(key) == 0)
 		return (NULL);
 
 	node = malloc(sizeof(hash_node_t));
