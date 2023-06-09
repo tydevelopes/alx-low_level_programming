@@ -24,16 +24,10 @@ void free_list(hash_node_t *head)
 {
 	hash_node_t *curr_node = NULL;
 
-	if (!head)
-		return;
-
-	curr_node = head;
-
-	while (head->next)
+	while (head)
 	{
+		curr_node = head;
 		head = head->next;
 		free_node(curr_node);
-		curr_node = head;
 	}
-	free_node(head);
 }
