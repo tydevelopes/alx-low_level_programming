@@ -11,7 +11,10 @@ int main(void)
 	int status = 9;
 
 	ht = hash_table_create(1024);
-	status = hash_table_set(ht, "", "cool");
+	status = hash_table_set(ht, "hetairas", "cool");
+	status = hash_table_set(ht, "mentioner", "hello");
+
+	hash_table_delete(ht);
 
 	printf("status: %d\n", status);
 	return (EXIT_SUCCESS);

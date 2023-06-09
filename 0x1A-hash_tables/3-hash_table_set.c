@@ -1,8 +1,5 @@
 #include "hash_tables.h"
 
-hash_node_t *create_node(const char *key, const char *value);
-void free_node(hash_node_t *node);
-
 /**
  * hash_table_set - adds element to the hash table
  * @ht: pinter to the hash table
@@ -14,6 +11,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
 	hash_node_t *node = NULL, *head = NULL, *current_node = NULL;
+
+	if (!ht)
+		return (0);
 
 	node = create_node(key, value);
 	if (!node)
